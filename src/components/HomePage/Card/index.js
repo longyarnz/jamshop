@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import React from "react"
 import { jsx, Styled } from "theme-ui"
-import { Col } from "../../Grid"
 import Add from "../../../images/elements/add.svg"
 
 function HomepageCard({ title, src }) {
@@ -65,7 +64,7 @@ const styles = {
       "& button": {
         position: "absolute",
         backgroundColor: "accent",
-        padding: "13px",
+        padding: "11px 13px",
         borderRadius: "50%",
         borderColor: "transparent",
         right: "10px",
