@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import React from "react"
 import { jsx, Styled } from "theme-ui"
-import { Row, Col } from "../../Grid"
 import HomepageSlideshow from "../Slideshow"
 
 function HomepageExplore() {
@@ -10,14 +9,12 @@ function HomepageExplore() {
       <Styled.h2 sx={styles.heading}>
         Explore community choices
       </Styled.h2>
+
       <Styled.p sx={styles.subText}>
-        Updated daily based on most popular choices
-        <br />
-        among dev community
+        Updated daily based on most popular choices among dev community
       </Styled.p>
-      <Row>
-        <HomepageSlideshow />
-      </Row>
+      
+      <HomepageSlideshow />
     </section>
   )
 }
@@ -34,6 +31,7 @@ const styles = {
   },
   subText: {
     fontWeight: "200",
-    color: "#fff"
+    fontSize: '18px',
+    maxWidth: 400
   }
 }
