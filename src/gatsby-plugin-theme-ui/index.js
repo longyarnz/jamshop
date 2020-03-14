@@ -93,7 +93,7 @@ export default {
     },
     p: {
       fontSize: 2,
-      lineHeight: [1.59],
+      lineHeight: [1.8],
       ...bodyTextStandards,
     },
     a: {
