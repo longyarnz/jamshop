@@ -2,6 +2,7 @@
 import React from "react"
 import { jsx, Styled } from "theme-ui"
 import { Row, Col } from "../../Grid"
+import HomepageSlideshow from "../Slideshow"
 
 function HomepageExplore() {
   return (
@@ -14,6 +15,9 @@ function HomepageExplore() {
         <br />
         among dev community
       </Styled.p>
+      <Row>
+        <HomepageSlideshow />
+      </Row>
     </section>
   )
 }
