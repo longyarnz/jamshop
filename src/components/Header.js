@@ -2,7 +2,7 @@
 import { jsx } from "theme-ui"
 import { Link } from "gatsby"
 import { Container } from "../components/Grid"
-import CartButton from "./Common/CartButton"
+import Cart from "./HomePage/Cart"
 
 export default function Header() {
   return (
@@ -24,7 +24,7 @@ export default function Header() {
         <Link to="/" sx={styles.mainLink}>
           JAM SHOP
         </Link>
-        <CartButton />
+        <Cart />
       </Container>
     </header>
   )

@@ -5,10 +5,12 @@ import Cart from "../../../images/elements/cart.svg"
 
 function CartButton() {
   return (
-    <button sx={styles.cartButton}>
-      <img src={Cart} alt="cart" />
-      <span>88</span>
-    </button>
+    <div>
+      <button sx={styles.cartButton}>
+        <img src={Cart} alt="cart" />
+        <span>88</span>
+      </button>
+    </div>
   )
 }
 
