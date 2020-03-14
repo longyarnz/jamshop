@@ -3,6 +3,7 @@ import React from "react"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 import Hero from "../components/HomePage/Hero"
+import Explore from "../components/HomePage/Explore"
 import { Container } from "../components/Grid"
 
 export default function IndexPage() {
@@ -11,6 +12,9 @@ export default function IndexPage() {
       <SEO title="Home" />
       <Container>
         <Hero />
+      </Container>
+      <Container>
+        <Explore />
       </Container>
     </Layout>
   )
