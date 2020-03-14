@@ -38,6 +38,8 @@ const styles = {
     border: "3px solid #969693",
     borderRadius: "3px",
     position: "relative",
+    cursor: "pointer",
+    transition: 'all ease .25s',
     "& > img": {
       mb: 6
     },
@@ -62,16 +64,36 @@ const styles = {
       },
       "& button": {
         position: "absolute",
-        backgroundColor: "#ab528d",
+        backgroundColor: "accent",
         padding: "13px",
         borderRadius: "50%",
         borderColor: "transparent",
         right: "10px",
         bottom: "10px",
+        cursor: "pointer",
+        transition: 'all ease .25s',
         "& img": {
+          transition: 'all ease .15s',
           width: "15px"
+        },
+        "&:hover": {
+          backgroundColor: "#f8af23",
+          outline: 'none',
+          "& img": {
+            transform: "scale(1.1)"
+          }
+        },
+        "&:active": {
+          backgroundColor: "accent",
+          outline: "none"
+        },
+        "&:focus": {
+          outline: "none"
         }
       }
+    },
+    "&:hover": {
+      backgroundColor: "rgba(255, 255, 255, .0)",
     }
   }
 }
