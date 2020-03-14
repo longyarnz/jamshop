@@ -13,7 +13,7 @@ function HomepageExplore() {
       <Styled.p sx={styles.subText}>
         Updated daily based on most popular choices among dev community
       </Styled.p>
-      
+
       <HomepageSlideshow />
     </section>
   )
@@ -23,7 +23,7 @@ export default HomepageExplore
 
 const styles = {
   wrapper: {
-    mt: 8
+    mt: "170px"
   },
   heading: {
     fontFamily: "body",
@@ -31,7 +31,7 @@ const styles = {
   },
   subText: {
     fontWeight: "200",
-    fontSize: '18px',
+    fontSize: "18px",
     maxWidth: 400
   }
 }

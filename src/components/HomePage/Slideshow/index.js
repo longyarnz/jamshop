@@ -7,14 +7,12 @@ import Dummy from "../../../images/products/dumy.svg"
 
 function HomepageSlideshow() {
   return (
-    <Row>
       <section sx={styles.wrapper}>
         <Card title="Great Dummy" src={Dummy} />
         <Card title="Basic Dummy" src={Dummy} />
         <Card title="Dummy X Pro" src={Dummy} />
-        <Card title="Woooden Dummy" src={Dummy} />
+        <Card title="Wooden Dummy" src={Dummy} />
       </section>
-    </Row>
   )
 }
 
@@ -22,9 +20,12 @@ export default HomepageSlideshow
 
 const styles = {
   wrapper: {
-    width: '100%',
-    display: 'flex',
-    flexDirection: ['column', , ,'row'],
-    mt: 5
+    width: "100%",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    flexDirection: ["column", , ,"row"],
+    my: 6,
+    mx: "0"
   }
 }
