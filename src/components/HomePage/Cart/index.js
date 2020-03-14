@@ -3,7 +3,7 @@ import React from "react"
 import { jsx } from "theme-ui"
 import Cart from "../../../images/elements/cart.svg"
 
-function CartButton() {
+function Cart() {
   return (
     <div>
       <button sx={styles.cartButton}>
@@ -14,7 +14,7 @@ function CartButton() {
   )
 }
 
-export default CartButton
+export default Cart
 
 const styles = {
   cartButton: {
