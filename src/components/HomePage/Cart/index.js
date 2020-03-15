@@ -1,17 +1,28 @@
 /** @jsx jsx */
-import React from "react"
+import { useState } from "react"
 import { jsx } from "theme-ui"
+import ShouldRender from "@bit/lekanmedia.shared-ui.internal.should-render";
 import Box from './Box'
 import src from "../../../images/elements/cart.svg"
 
-function Cart() {
+function Cart(props) {
+  const [open, setOpen] = useState(false);
+
+  const toggleBox = e => {
+    setOpen(!open);
+    props.blurScreen(!open);
+    document.body.style.overflow = !open ? "hidden" : "auto";
+  }
+
   return (
     <div sx={styles.wrapper}>
-      <button sx={styles.cartButton}>
+      <button sx={styles.cartButton} onClick={toggleBox}>
         <img src={src} alt="cart" />
         <span>88</span>
       </button>
-      <Box />
+      <ShouldRender if={open}>
+        <Box />
+      </ShouldRender>
     </div>
   )
 }
@@ -37,6 +48,12 @@ const styles = {
       fontWeight: "300",
       fontSize: "10px",
       right: "-8px"
+    },
+    "&:active": {
+      outline: "none"
+    },
+    "&:focus": {
+      outline: "none"
     }
   }
 }

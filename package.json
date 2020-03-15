@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Ark Gorecki <aaron@bejamas.io",
   "dependencies": {
+    "@bit/lekanmedia.shared-ui.internal.should-render": "^1.0.0",
     "@emotion/core": "^10.0.27",
     "babel-plugin-styled-components": "^1.10.6",
     "gatsby": "^2.19.5",

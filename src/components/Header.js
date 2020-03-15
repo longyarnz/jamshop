@@ -1,10 +1,14 @@
 /** @jsx jsx */
+import { useState } from "react"
 import { jsx } from "theme-ui"
 import { Link } from "gatsby"
 import { Container } from "../components/Grid"
 import Cart from "./HomePage/Cart"
 
 export default function Header() {
+  const [blur, setBlur] = useState(false);
+  styles.header["::after"] = blur ? styles.after : null;
+
   return (
     <header sx={styles.header}>
       <Container
@@ -24,7 +28,7 @@ export default function Header() {
         <Link to="/" sx={styles.mainLink}>
           JAM SHOP
         </Link>
-        <Cart />
+        <Cart blurScreen={setBlur} />
       </Container>
     </header>
   )
@@ -42,18 +46,18 @@ const styles = {
     left: 0,
     width: "1",
     background: "transparent",
-    zIndex: 9,
-    "::after": {
-      content: "''",
-      position: "absolute",
-      background: "rgba(28, 4, 46, 0.55)",
-      backdropFilter: "blur(10px)",
-      width: "100%",
-      height: "100vh",
-      zIndex: 2,
-      top: 0,
-      left: 0
-    }
+    zIndex: 9
+  },
+  after: {
+    content: "''",
+    position: "absolute",
+    background: "rgba(28, 4, 46, 0.55)",
+    backdropFilter: "blur(10px)",
+    width: "100%",
+    height: "100vh",
+    zIndex: 2,
+    top: 0,
+    left: 0
   },
   mainLink: {
     variant: "text.link",
