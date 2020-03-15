@@ -1,11 +1,13 @@
 /** @jsx jsx */
 import React from "react"
 import { jsx } from "theme-ui"
+import BoxItem from "./BoxItem"
 
 function Box() {
   return (
     <div sx={styles.wrapper}>
-
+      <BoxItem />
+      <BoxItem />
     </div>
   )
 }
@@ -23,5 +25,9 @@ const styles = {
     right: "-43px",
     top: "50px",
     zIndex: 3,
+    p: "15px",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "flex-start",
   }
 }
