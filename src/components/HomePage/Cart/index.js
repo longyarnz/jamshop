@@ -12,6 +12,14 @@ function Cart(props) {
     setOpen(!open);
     props.blurScreen(!open);
     document.body.style.overflow = !open ? "hidden" : "auto";
+
+    document.body.addEventListener("click", function revert(e) {
+      if (e.target.nodeName !== 'HEADER') return;
+      setOpen(false);
+      props.blurScreen(false);
+      document.body.style.overflow = "auto";
+      document.body.removeEventListener("click", revert);
+    })
   }
 
   return (
