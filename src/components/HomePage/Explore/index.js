@@ -27,11 +27,14 @@ const styles = {
   },
   heading: {
     fontFamily: "body",
-    fontWeight: "medium"
+    fontWeight: "medium",
+    fontSize: "28px",
+    color: "#eeeeee"
   },
   subText: {
-    fontWeight: "200",
-    fontSize: "18px",
-    maxWidth: 400
+    fontWeight: "300",
+    fontSize: "16px",
+    maxWidth: 400,
+    color: "#c4c4c4"
   }
 }
