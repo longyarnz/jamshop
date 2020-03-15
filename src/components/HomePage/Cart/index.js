@@ -1,15 +1,17 @@
 /** @jsx jsx */
 import React from "react"
 import { jsx } from "theme-ui"
-import Cart from "../../../images/elements/cart.svg"
+import Box from './Box'
+import src from "../../../images/elements/cart.svg"
 
 function Cart() {
   return (
-    <div>
+    <div sx={styles.wrapper}>
       <button sx={styles.cartButton}>
-        <img src={Cart} alt="cart" />
+        <img src={src} alt="cart" />
         <span>88</span>
       </button>
+      <Box />
     </div>
   )
 }
@@ -17,11 +19,15 @@ function Cart() {
 export default Cart
 
 const styles = {
+  wrapper: {
+    position: "relative",
+  },
   cartButton: {
     background: "transparent",
     border: "none",
     cursor: "pointer",
     position: "relative",
+    zIndex: 3,
     "& > span": {
       position: "absolute",
       p: '5px',
