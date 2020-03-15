@@ -8,6 +8,9 @@ function Box() {
     <div sx={styles.wrapper}>
       <BoxItem />
       <BoxItem />
+      <button sx={styles.checkout}>
+        Checkout
+      </button>
     </div>
   )
 }
@@ -29,5 +32,28 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     justifyContent: "flex-start",
+  },
+  checkout: {
+    width: "90px",
+    height: "25px",
+    backgroundColor: "accent",
+    border: "none",
+    color: "#fff",
+    alignSelf: "flex-end",
+    borderRadius: "2px",
+    cursor: "pointer",
+    transition: 'all ease .25s',
+    fontFamily: "body",
+    "&:hover": {
+      backgroundColor: "#f8af23",
+      outline: 'none',
+    },
+    "&:active": {
+      backgroundColor: "accent",
+      outline: "none"
+    },
+    "&:focus": {
+      outline: "none"
+    }
   }
 }
