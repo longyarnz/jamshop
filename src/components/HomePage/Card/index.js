@@ -28,12 +28,13 @@ const styles = {
   },
   figure: {
     width: ["100%", , , "calc(25% - 40px)"],
+    height: "270px",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     p: "32px 24px 24px",
     m: "15px 0px",
-    backgroundColor: "rgba(255, 255, 255, .1)",
+    backgroundColor: "#331F41",
     border: "3px solid #969693",
     borderRadius: "3px",
     position: "relative",
@@ -46,15 +47,15 @@ const styles = {
       "& > caption": {
         color: "#fff",
         fontFamily: "body",
-        fontWeight: 500,
+        fontWeight: "bold",
         textTransform: "uppercase",
-        fontSize: "16px",
+        fontSize: "18px",
         display: "inline",
         textAlign: "left"
       },
       "& > p": {
         fontWeight: "300",
-        fontSize: "13px",
+        fontSize: "14px",
         mb: 0,
         display: "flex",
         alignItems: "flex-end",
