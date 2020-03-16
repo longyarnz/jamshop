@@ -5,7 +5,7 @@ import src from "../../../images/products/dumy.svg"
 function BoxItem({ name, price }) {
   return (
     <div sx={styles.wrapper}>
-      <img src={src} alt="product"/>
+      <img src={src} alt="product" />
       <span>{name}</span>
       <span>${price}</span>
     </div>
@@ -23,18 +23,18 @@ const styles = {
     alignItems: "center",
     "& > img": {
       width: "28px",
-      mr: "15px"
+      mr: "15px",
     },
     "& > span": {
       fontWeight: "bold",
       fontSize: "12px",
       color: "#EEEEEE",
       "&:first-of-type": {
-        mr: "auto"
-      }
+        mr: "auto",
+      },
     },
     "&:last-of-type": {
-      mb: "auto"
-    }
-  }
+      mb: "auto",
+    },
+  },
 }

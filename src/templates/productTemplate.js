@@ -127,6 +127,7 @@ const styles = {
     cursor: "pointer",
     transition: "all ease .25s",
     fontFamily: "body",
+    fontWeight: "bold",
     textTransform: "uppercase",
     "&:hover": {
       backgroundColor: "#f8af23",

@@ -1,24 +1,24 @@
 /** @jsx jsx */
-import React, { useState, useContext } from "react"
+import { useState, useContext } from "react"
 import { navigate } from "gatsby"
 import { jsx } from "theme-ui"
-import ShouldRender from "@bit/lekanmedia.shared-ui.internal.should-render";
+import ShouldRender from "@bit/lekanmedia.shared-ui.internal.should-render"
 import { CartContext } from "../../../store"
 import Add from "../../../images/elements/add.svg"
 
 function HomepageCard({ name, src, excerpt, price }) {
   const [added, setAdded] = useState(false)
-  const [ , dispatch ] = useContext(CartContext)
+  const [, dispatch] = useContext(CartContext)
   const path = `/products/${name.replace(/\s/g, "_").toLowerCase()}`
-  const viewProduct = () => navigate(path);
+  const viewProduct = () => navigate(path)
   const addProduct = e => {
     e.stopPropagation()
     setAdded(true)
     dispatch({
-      type: 'ADD',
-      item: { name, price }
+      type: "ADD",
+      item: { name, price },
     })
-    setTimeout(() => setAdded(false), 3000);
+    setTimeout(() => setAdded(false), 3000)
   }
 
   return (
@@ -59,9 +59,9 @@ const styles = {
     borderRadius: "3px",
     position: "relative",
     cursor: "pointer",
-    transition: 'all ease .25s',
+    transition: "all ease .25s",
     "& > img": {
-      mb: 6
+      mb: 6,
     },
     "& > figcaption": {
       "& > span": {
@@ -71,7 +71,8 @@ const styles = {
         textTransform: "uppercase",
         fontSize: "18px",
         display: "inline",
-        textAlign: "left"
+        textAlign: "left",
+        whiteSpace: "nowrap",
       },
       "& > p": {
         fontWeight: "300",
@@ -80,7 +81,7 @@ const styles = {
         display: "flex",
         alignItems: "flex-end",
         width: "180px",
-        lineHeight: 1.6
+        lineHeight: 1.6,
       },
       "& button": {
         position: "absolute",
@@ -91,29 +92,29 @@ const styles = {
         right: "10px",
         bottom: "10px",
         cursor: "pointer",
-        transition: 'all ease .25s',
+        transition: "all ease .25s",
         "& img": {
-          transition: 'all ease .15s',
-          width: "15px"
+          transition: "all ease .15s",
+          width: "15px",
         },
         "&:hover": {
           backgroundColor: "#f8af23",
-          outline: 'none',
+          outline: "none",
           "& img": {
-            transform: "scale(1.1)"
-          }
+            transform: "scale(1.1)",
+          },
         },
         "&:active": {
           backgroundColor: "accent",
-          outline: "none"
+          outline: "none",
         },
         "&:focus": {
-          outline: "none"
-        }
-      }
+          outline: "none",
+        },
+      },
     },
     "&:hover": {
       backgroundColor: "rgba(255, 255, 255, .0)",
-    }
-  }
+    },
+  },
 }

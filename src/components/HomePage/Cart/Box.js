@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import React from "react"
 import { jsx } from "theme-ui"
 import { FlatList } from "@bit/lekanmedia.shared-ui.internal.utils"
 import BoxItem from "./BoxItem"
@@ -27,13 +26,13 @@ export default Box
 
 const styles = {
   wrapper: {
-    width: ["calc(100vw - 50px)", , "320px", "280px"],
+    width: ["calc(100vw - 50px)", "calc(100vw - 50px)", "320px", "280px"],
     minHeight: "270px",
     border: "2px solid #F5F5F5",
     backgroundColor: "#220538",
     borderRadius: "4px",
     position: "absolute",
-    right: [0, , "-25px", "-43px"],
+    right: [0, 0, "-25px", "-43px"],
     top: "50px",
     zIndex: 3,
     p: "15px",
@@ -50,19 +49,19 @@ const styles = {
     alignSelf: "flex-end",
     borderRadius: "2px",
     cursor: "pointer",
-    transition: 'all ease .25s',
+    transition: "all ease .25s",
     fontFamily: "body",
     mt: "30px",
     "&:hover": {
       backgroundColor: "#f8af23",
-      outline: 'none',
+      outline: "none",
     },
     "&:active": {
       backgroundColor: "accent",
-      outline: "none"
+      outline: "none",
     },
     "&:focus": {
-      outline: "none"
-    }
-  }
+      outline: "none",
+    },
+  },
 }

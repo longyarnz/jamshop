@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import React from "react"
 import { jsx, Styled } from "theme-ui"
 import HomepageSlideshow from "../Slideshow"
 
@@ -23,20 +22,20 @@ export default HomepageExplore
 
 const styles = {
   wrapper: {
-    mt: "170px"
+    mt: "170px",
   },
   heading: {
     fontFamily: "body",
-    fontWeight: "medium",
+    fontWeight: "600",
     fontSize: "28px",
     color: "#eeeeee",
-    pl: "20px"
+    pl: "20px",
   },
   subText: {
     fontWeight: "300",
     fontSize: "16px",
     maxWidth: 400,
     color: "#c4c4c4",
-    pl: "20px"
-  }
+    pl: "20px",
+  },
 }

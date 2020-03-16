@@ -5,8 +5,8 @@ import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 
 export default function NotFoundPage() {
-  navigate("/");
-  
+  navigate("/")
+
   return (
     <Layout>
       <SEO title="404: Not found" />

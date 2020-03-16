@@ -2,7 +2,7 @@
 import { jsx } from "theme-ui"
 import { useStaticQuery, graphql } from "gatsby"
 import Slider from "react-slick"
-import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import Card from "../Card"
 import Dummy from "../../../images/products/dumy.svg"
@@ -21,7 +21,7 @@ const settings = {
         slidesToScroll: 3,
         infinite: true,
         centerMode: true,
-      }
+      },
     },
     {
       breakpoint: 1024,
@@ -30,7 +30,7 @@ const settings = {
         slidesToScroll: 2,
         infinite: true,
         centerMode: true,
-      }
+      },
     },
     {
       breakpoint: 480,
@@ -38,10 +38,10 @@ const settings = {
         slidesToShow: 1,
         infinite: true,
         centerMode: true,
-        slidesToScroll: 1
-      }
-    }
-  ]
+        slidesToScroll: 1,
+      },
+    },
+  ],
 }
 
 function HomepageSlideshow() {
@@ -50,7 +50,7 @@ function HomepageSlideshow() {
   return (
     <section sx={styles.wrapper}>
       <Slider {...settings}>
-        { slides }
+        {slides}
       </Slider>
     </section>
   )
@@ -75,12 +75,12 @@ function useQuery() {
         }
       }
     }
-    `
+    `,
   )
 
   data = data.allMarkdownRemark.edges.map(({ node }) => {
     const { name, excerpt, price } = node.frontmatter
-    if (!name) return
+    if (!name) return null
     else {
       return (
         <Card key={node.id} name={name} excerpt={excerpt} price={price} src={Dummy} />
@@ -102,17 +102,17 @@ const styles = {
       alignItems: "center",
     },
     "& .slick-initialized .slick-slide": {
-      width: ["5.75% !important", , , "5% !important"]
+      width: ["5.75% !important", "5.75% !important", "5.75% !important", "5% !important"],
     },
     "& .slick-arrow": {
-      transform: ["scale(2)", , "scale(3)"],
-      zIndex: 3
+      transform: ["scale(2)", "scale(2)", "scale(3)"],
+      zIndex: 3,
     },
     "& .slick-next": {
-      right: [0, , , , "-7%"]
+      right: [0, 0, 0, 0, "-7%"],
     },
     "& .slick-prev": {
-      left: [0, , , , "-7%"]
-    }
-  }
+      left: [0, 0, 0, 0, "-7%"],
+    },
+  },
 }

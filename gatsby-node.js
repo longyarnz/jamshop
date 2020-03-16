@@ -1,8 +1,8 @@
-const path = require(`path`)
+const path = require("path")
 
-exports.createPages = async ({ actions, graphql, reporter }) => {
+exports.createPages = async({ actions, graphql, reporter }) => {
   const { createPage } = actions
-  const component = path.resolve(`src/templates/productTemplate.js`)
+  const component = path.resolve("src/templates/productTemplate.js")
   const result = await graphql(`
     {
       allMarkdownRemark {
@@ -19,7 +19,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   // Handle errors
   if (result.errors) {
-    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    reporter.panicOnBuild("Error while running GraphQL query.")
     return
   }
 

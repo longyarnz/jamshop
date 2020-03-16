@@ -1,32 +1,32 @@
 /** @jsx jsx */
-import React, { useState, useContext, useEffect } from "react"
+import { useState, useContext, useEffect } from "react"
 import { jsx } from "theme-ui"
-import ShouldRender from "@bit/lekanmedia.shared-ui.internal.should-render";
+import ShouldRender from "@bit/lekanmedia.shared-ui.internal.should-render"
 import Box from "./Box"
 import src from "../../../images/elements/cart.svg"
 import { CartContext } from "../../../store"
 
 function Cart(props) {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
   const [{ items }] = useContext(CartContext)
 
   useEffect(() => {
     return () => {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = "auto"
       document.body.onclick = null
     }
   }, [])
 
   const revert = (e) => {
     if (e.target.nodeName !== "HEADER") return
-    setOpen(false);
-    props.blurScreen(false);
-    document.body.style.overflow = "auto";
+    setOpen(false)
+    props.blurScreen(false)
+    document.body.style.overflow = "auto"
     document.body.onclick = null
   }
 
   const toggleBox = items.length > 0 ? e => {
-    setOpen(!open);
+    setOpen(!open)
     props.blurScreen(!open)
     document.body.style.overflow = !open ? "hidden" : "auto"
     document.body.onclick = !open ? revert : null
@@ -65,13 +65,13 @@ const styles = {
       color: "#fff",
       fontWeight: "300",
       fontSize: "10px",
-      right: "-8px"
+      right: "-8px",
     },
     "&:active": {
-      outline: "none"
+      outline: "none",
     },
     "&:focus": {
-      outline: "none"
-    }
-  }
+      outline: "none",
+    },
+  },
 }
