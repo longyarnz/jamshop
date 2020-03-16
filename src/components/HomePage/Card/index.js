@@ -1,19 +1,29 @@
 /** @jsx jsx */
+import React, { useState, useContext } from "react"
 import { navigate } from "gatsby"
 import { jsx } from "theme-ui"
+import { CartContext } from "../../../store"
 import Add from "../../../images/elements/add.svg"
 
-function HomepageCard({ title, src, summary }) {
-  const path = `/products/${title.replace(/\s/g, "_").toLowerCase()}`
+function HomepageCard({ name, src, excerpt, price }) {
+  const [ , dispatch ] = useContext(CartContext)
+  const path = `/products/${name.replace(/\s/g, "_").toLowerCase()}`
   const viewProduct = () => navigate(path);
+  const addProduct = e => {
+    e.stopPropagation()
+    dispatch({
+      type: 'ADD',
+      item: { name, price }
+    })
+  }
 
   return (
     <figure sx={styles.figure} onClick={viewProduct}>
       <img src={src} alt="product" />
       <figcaption>
-        <span>{title}</span>
-        <p>{summary}</p>
-        <button>
+        <span>{name}</span>
+        <p>{excerpt}</p>
+        <button onClick={addProduct}>
           <img src={Add} alt="add" />
         </button>
       </figcaption>

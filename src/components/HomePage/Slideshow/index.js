@@ -54,7 +54,7 @@ function useQuery() {
     if (!name) return
     else {
       return (
-        <Card key={`${name}-${price}`} title={name} summary={excerpt} src={Dummy} />
+        <Card key={node.id} name={name} excerpt={excerpt} price={price} src={Dummy} />
       )
     }
   })
