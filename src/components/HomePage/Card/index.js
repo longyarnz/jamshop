@@ -2,26 +2,33 @@
 import React, { useState, useContext } from "react"
 import { navigate } from "gatsby"
 import { jsx } from "theme-ui"
+import ShouldRender from "@bit/lekanmedia.shared-ui.internal.should-render";
 import { CartContext } from "../../../store"
 import Add from "../../../images/elements/add.svg"
 
 function HomepageCard({ name, src, excerpt, price }) {
+  const [added, setAdded] = useState(false)
   const [ , dispatch ] = useContext(CartContext)
   const path = `/products/${name.replace(/\s/g, "_").toLowerCase()}`
   const viewProduct = () => navigate(path);
   const addProduct = e => {
     e.stopPropagation()
+    setAdded(true)
     dispatch({
       type: 'ADD',
       item: { name, price }
     })
+    setTimeout(() => setAdded(false), 3000);
   }
 
   return (
     <figure sx={styles.figure} onClick={viewProduct}>
       <img src={src} alt="product" />
       <figcaption>
-        <span>{name}</span>
+        <span>
+          {name}
+          <ShouldRender if={added}>✅</ShouldRender>
+        </span>
         <p>{excerpt}</p>
         <button onClick={addProduct}>
           <img src={Add} alt="add" />
