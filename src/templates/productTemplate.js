@@ -19,10 +19,10 @@ function Productpage({ data }) {
   const addProduct = () => {
     setAdded(true)
     dispatch({
-      type: 'ADD',
-      item: { name, price }
+      type: "ADD",
+      item: { name, price },
     })
-    setTimeout(() => setAdded(false), 3000);
+    setTimeout(() => setAdded(false), 3000)
   }
 
   return (
@@ -41,7 +41,7 @@ function Productpage({ data }) {
                 <p>{description}</p>
                 <h4>${price}</h4>
                 <button sx={styles.checkout} onClick={addProduct}>
-                  { text }
+                  {text}
                 </button>
               </div>
             </Col>
@@ -72,7 +72,7 @@ const styles = {
     height: "calc(100vh - 50px)",
     display: "flex",
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
   },
   imgWrapper: {
     width: ["70%", "1", "2/5", null, 480],
@@ -80,8 +80,8 @@ const styles = {
     order: [2, 2, 1],
     "& > img": {
       maxWidth: "1",
-      width: "1"
-    }
+      width: "1",
+    },
   },
   leadWrapper: {
     width: ["1", "1", "2/5", null, 450],
@@ -95,7 +95,7 @@ const styles = {
       fontFamily: "Roboto",
       fontSize: "2",
       color: "#FBE067",
-      textTransform: "uppercase"
+      textTransform: "uppercase",
     },
     "& h2": {
       fontFamily: "Roboto",
@@ -114,8 +114,8 @@ const styles = {
       fontWeight: "normal",
       fontSize: "18px",
       color: "light",
-      lineHeight: 1.5
-    }
+      lineHeight: 1.5,
+    },
   },
   checkout: {
     width: "150px",
@@ -125,19 +125,19 @@ const styles = {
     alignSelf: "flex-end",
     borderRadius: "4px",
     cursor: "pointer",
-    transition: 'all ease .25s',
+    transition: "all ease .25s",
     fontFamily: "body",
     textTransform: "uppercase",
     "&:hover": {
       backgroundColor: "#f8af23",
-      outline: 'none',
+      outline: "none",
     },
     "&:active": {
       backgroundColor: "accent",
-      outline: "none"
+      outline: "none",
     },
     "&:focus": {
-      outline: "none"
-    }
-  }
+      outline: "none",
+    },
+  },
 }

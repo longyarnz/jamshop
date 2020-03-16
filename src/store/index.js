@@ -1,7 +1,7 @@
 import React, { useReducer } from "react"
 
 const initialState = {
-  items: []
+  items: [],
 }
 
 export const CartContext = React.createContext()
@@ -9,8 +9,7 @@ export const CartContext = React.createContext()
 function reducer(state, action) {
   switch (action.type) {
     case "ADD":
-      const items = state.items.concat([ action.item ])
-      return { items }
+      return { items: state.items.concat([action.item]) }
     default:
       return state
   }
@@ -21,7 +20,7 @@ function Store({ children }) {
 
   return (
     <CartContext.Provider value={state}>
-      { children }
+      {children}
     </CartContext.Provider>
   )
 }

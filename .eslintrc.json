@@ -6,6 +6,7 @@
     "globals": {
       "graphql": true
     },
+    "ignorePatterns": ["!src/*"],
     "rules": {
       "react/prop-types": "off",
       "jsx-quotes": ["error", "prefer-double"],

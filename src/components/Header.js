@@ -6,8 +6,8 @@ import { Container } from "../components/Grid"
 import Cart from "./HomePage/Cart"
 
 export default function Header() {
-  const [blur, setBlur] = useState(false);
-  styles.header["::after"] = blur ? styles.after : null;
+  const [blur, setBlur] = useState(false)
+  styles.header["::after"] = blur ? styles.after : null
 
   return (
     <header sx={styles.header}>
@@ -22,7 +22,7 @@ export default function Header() {
             "1320px",
             "1480px",
           ],
-          ...styles.wrapper
+          ...styles.wrapper,
         }}
       >
         <Link to="/" sx={styles.mainLink}>
@@ -46,7 +46,7 @@ const styles = {
     left: 0,
     width: "1",
     background: "transparent",
-    zIndex: 9
+    zIndex: 9,
   },
   after: {
     content: "''",
@@ -57,17 +57,17 @@ const styles = {
     height: "100vh",
     zIndex: 2,
     top: 0,
-    left: 0
+    left: 0,
   },
   mainLink: {
     variant: "text.link",
     color: "white",
     fontWeight: "bold",
     fontSize: 22,
-    zIndex: 3
+    zIndex: 3,
   },
   wrapper: {
-    display: 'flex',
-    justifyContent: 'space-between'
-  }
+    display: "flex",
+    justifyContent: "space-between",
+  },
 }
