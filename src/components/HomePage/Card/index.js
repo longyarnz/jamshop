@@ -8,7 +8,7 @@ function HomepageCard({ title, src }) {
     <figure sx={styles.figure}>
       <img src={src} alt="product" />
       <figcaption>
-        <caption>{title}</caption>
+        <span>{title}</span>
         <p>Something that you truly need, but haven"t know about yet!</p>
         <button>
           <img src={Add} alt="add" />
@@ -44,7 +44,7 @@ const styles = {
       mb: 6
     },
     "& > figcaption": {
-      "& > caption": {
+      "& > span": {
         color: "#fff",
         fontFamily: "body",
         fontWeight: "bold",
