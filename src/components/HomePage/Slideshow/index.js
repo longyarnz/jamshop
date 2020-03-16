@@ -12,7 +12,36 @@ const settings = {
   speed: 500,
   slidesToShow: 4,
   slidesToScroll: 1,
-  mobileFirst: true
+  mobileFirst: true,
+  responsive: [
+    {
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        centerMode: true,
+      }
+    },
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        infinite: true,
+        centerMode: true,
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        infinite: true,
+        centerMode: true,
+        slidesToScroll: 1
+      }
+    }
+  ]
 }
 
 function HomepageSlideshow() {
@@ -73,16 +102,17 @@ const styles = {
       alignItems: "center",
     },
     "& .slick-initialized .slick-slide": {
-      width: "5% !important"
+      width: ["5.75% !important", , , "5% !important"]
     },
     "& .slick-arrow": {
-      transform: "scale(3)"
+      transform: ["scale(2)", , "scale(3)"],
+      zIndex: 3
     },
     "& .slick-next": {
-      right: "-7%",
+      right: [0, , , , "-7%"]
     },
     "& .slick-prev": {
-      left: "-7%",
+      left: [0, , , , "-7%"]
     }
   }
 }
