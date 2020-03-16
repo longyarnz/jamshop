@@ -1,15 +1,24 @@
 /** @jsx jsx */
+import { useContext } from "react"
 import { graphql } from "gatsby"
 import { jsx } from "theme-ui"
 import { Row, Col, Container } from "../components/Grid"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
+import { CartContext } from "../store"
 
 import ProductImage from "../images/products/dumy.svg"
 
 function Productpage({ data }) {
+  const [, dispatch] = useContext(CartContext)
   const { markdownRemark } = data
-  const { frontmatter } = markdownRemark
+  const { name, tag, description, price } = markdownRemark.frontmatter
+  const addProduct = () => {
+    dispatch({
+      type: 'ADD',
+      item: { name, price }
+    })
+  }
 
   return (
     <Layout>
@@ -22,11 +31,11 @@ function Productpage({ data }) {
             </Col>
             <Col styles={styles.leadWrapper}>
               <div>
-                <span>{frontmatter.tag}</span>
-                <h2>{frontmatter.name}</h2>
-                <p>{frontmatter.description}</p>
-                <h4>${frontmatter.price}</h4>
-                <button sx={styles.checkout}>
+                <span>{tag}</span>
+                <h2>{name}</h2>
+                <p>{description}</p>
+                <h4>${price}</h4>
+                <button sx={styles.checkout} onClick={addProduct}>
                   Add To Cart
                 </button>
               </div>
