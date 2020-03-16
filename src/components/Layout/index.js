@@ -1,8 +1,7 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
 import React from "react"
+import { jsx } from "theme-ui"
 import PropTypes from "prop-types"
-
 import Header from "../Header"
 
 export default function Layout({ children }) {

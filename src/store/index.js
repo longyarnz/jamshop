@@ -1,7 +1,6 @@
 import React, { useReducer } from "react"
 
 const initialState = {
-  totalNumberOfItems: 0,
   items: []
 }
 
