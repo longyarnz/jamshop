@@ -8,6 +8,9 @@ export const CartContext = React.createContext()
 
 function reducer(state, action) {
   switch (action.type) {
+    case "ADD":
+      const items = state.items.concat([ action.item ])
+      return { items }
     default:
       return state
   }
