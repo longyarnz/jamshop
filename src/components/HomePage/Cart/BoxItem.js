@@ -2,12 +2,12 @@
 import { jsx } from "theme-ui"
 import src from "../../../images/products/dumy.svg"
 
-function BoxItem() {
+function BoxItem({ name, price }) {
   return (
     <div sx={styles.wrapper}>
       <img src={src} alt="product"/>
-      <span>Great Product #1</span>
-      <span>$13.99</span>
+      <span>{name}</span>
+      <span>${price}</span>
     </div>
   )
 }

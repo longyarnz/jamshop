@@ -1,13 +1,21 @@
 /** @jsx jsx */
 import React from "react"
 import { jsx } from "theme-ui"
+import { FlatList } from "@bit/lekanmedia.shared-ui.internal.utils"
 import BoxItem from "./BoxItem"
 
-function Box() {
+function Box({ items }) {
   return (
     <div sx={styles.wrapper}>
-      <BoxItem />
-      <BoxItem />
+      <FlatList
+        list={items}
+        listView={({ name, price }) => {
+          const key = Math.random()
+          return (
+            <BoxItem key={key} name={name} price={price} />
+          )
+        }}
+      />
       <button sx={styles.checkout}>
         Checkout
       </button>
@@ -44,6 +52,7 @@ const styles = {
     cursor: "pointer",
     transition: 'all ease .25s',
     fontFamily: "body",
+    mt: "30px",
     "&:hover": {
       backgroundColor: "#f8af23",
       outline: 'none',

@@ -31,7 +31,7 @@ function Cart(props) {
         <span>{ items.length }</span>
       </button>
       <ShouldRender if={open}>
-        <Box />
+        <Box items={items} />
       </ShouldRender>
     </div>
   )
