@@ -36,5 +36,15 @@ module.exports = {
         icon: "./src/images/icon.png", // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: "gatsby-plugin-google-fonts",
+      options: {
+        fonts: [
+          "Roboto:400,600",
+          "Montserrat:300,400,400,700", // you can also specify font weights and styles
+        ],
+        display: "swap",
+      },
+    },
   ],
 }
