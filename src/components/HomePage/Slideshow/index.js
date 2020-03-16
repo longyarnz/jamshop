@@ -1,8 +1,9 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import Slider from "react-slick";
+import { useStaticQuery, graphql } from "gatsby"
+import Slider from "react-slick"
 import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick-theme.css"
 import Card from "../Card"
 import Dummy from "../../../images/products/dumy.svg"
 
@@ -31,6 +32,38 @@ function HomepageSlideshow() {
 }
 
 export default HomepageSlideshow
+
+function useQuery() {
+  let data = useStaticQuery(
+    graphql`
+    {
+      allMarkdownRemark {
+        edges {
+          node {
+            id
+            frontmatter {
+              name
+              excerpt
+            }
+          }
+        }
+      }
+    }
+    `
+  )
+
+  data = data.allMarkdownRemark.edges.map(({ node }) => {
+    const { name, excerpt, id } = node.frontmatter
+    if (!name) return
+    else {
+      return (
+        <Card key={id} title={name} summary={excerpt} src={Dummy} />
+      )
+    }
+  })
+
+  return data
+}
 
 const styles = {
   wrapper: {
