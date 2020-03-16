@@ -27,13 +27,13 @@ export default Box
 
 const styles = {
   wrapper: {
-    width: "280px",
+    width: ["calc(100vw - 50px)", , "320px", "280px"],
     minHeight: "270px",
     border: "2px solid #F5F5F5",
     backgroundColor: "#220538",
     borderRadius: "4px",
     position: "absolute",
-    right: "-43px",
+    right: [0, , "-25px", "-43px"],
     top: "50px",
     zIndex: 3,
     p: "15px",
