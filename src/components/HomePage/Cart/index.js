@@ -10,7 +10,7 @@ function Cart(props) {
   const [open, setOpen] = useState(false);
   const [{ items }] = useContext(CartContext)
 
-  const toggleBox = e => {
+  const toggleBox = items.length > 0 ? e => {
     setOpen(!open);
     props.blurScreen(!open);
     document.body.style.overflow = !open ? "hidden" : "auto";
@@ -22,7 +22,7 @@ function Cart(props) {
       document.body.style.overflow = "auto";
       document.body.removeEventListener("click", revert);
     })
-  }
+  } : null
 
   return (
     <div sx={styles.wrapper}>
