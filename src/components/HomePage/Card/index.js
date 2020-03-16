@@ -1,11 +1,13 @@
 /** @jsx jsx */
-import React from "react"
+import { navigate } from "gatsby"
 import { jsx, Styled } from "theme-ui"
 import Add from "../../../images/elements/add.svg"
 
 function HomepageCard({ title, src }) {
+  const viewProduct = () => navigate('/product', { state: { product: 123 } });
+
   return (
-    <figure sx={styles.figure}>
+    <figure sx={styles.figure} onClick={viewProduct}>
       <img src={src} alt="product" />
       <figcaption>
         <span>{title}</span>
@@ -27,7 +29,7 @@ const styles = {
     order: [2, 2, 1],
   },
   figure: {
-    width: ["100%", , , "calc(25% - 40px)"],
+    width: "1",
     height: "270px",
     display: "flex",
     flexDirection: "column",
@@ -65,7 +67,7 @@ const styles = {
       "& button": {
         position: "absolute",
         backgroundColor: "accent",
-        padding: "11px 13px",
+        padding: "13px",
         borderRadius: "50%",
         borderColor: "transparent",
         right: "10px",

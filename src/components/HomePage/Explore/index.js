@@ -29,12 +29,14 @@ const styles = {
     fontFamily: "body",
     fontWeight: "medium",
     fontSize: "28px",
-    color: "#eeeeee"
+    color: "#eeeeee",
+    pl: "20px"
   },
   subText: {
     fontWeight: "300",
     fontSize: "16px",
     maxWidth: 400,
-    color: "#c4c4c4"
+    color: "#c4c4c4",
+    pl: "20px"
   }
 }
