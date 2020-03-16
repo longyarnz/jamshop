@@ -1,17 +1,18 @@
 /** @jsx jsx */
 import { navigate } from "gatsby"
-import { jsx, Styled } from "theme-ui"
+import { jsx } from "theme-ui"
 import Add from "../../../images/elements/add.svg"
 
-function HomepageCard({ title, src }) {
-  const viewProduct = () => navigate('/product', { state: { product: 123 } });
+function HomepageCard({ title, src, summary }) {
+  const path = `/products/${title.replace(/\s/g, "_").toLowerCase()}`
+  const viewProduct = () => navigate(path);
 
   return (
     <figure sx={styles.figure} onClick={viewProduct}>
       <img src={src} alt="product" />
       <figcaption>
         <span>{title}</span>
-        <p>Something that you truly need, but haven"t know about yet!</p>
+        <p>{summary}</p>
         <button>
           <img src={Add} alt="add" />
         </button>
