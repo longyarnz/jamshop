@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { graphql } from "gatsby"
 import { jsx } from "theme-ui"
 import { Row, Col, Container } from "../components/Grid"
@@ -10,14 +10,19 @@ import { CartContext } from "../store"
 import ProductImage from "../images/products/dumy.svg"
 
 function Productpage({ data }) {
+  const [added, setAdded] = useState(false)
   const [, dispatch] = useContext(CartContext)
   const { markdownRemark } = data
   const { name, tag, description, price } = markdownRemark.frontmatter
+  const text = added ? "Added" : "Add To Cart"
+  styles.checkout.backgroundColor = added ? "green !important" : "accent"
   const addProduct = () => {
+    setAdded(true)
     dispatch({
       type: 'ADD',
       item: { name, price }
     })
+    setTimeout(() => setAdded(false), 3000);
   }
 
   return (
@@ -36,7 +41,7 @@ function Productpage({ data }) {
                 <p>{description}</p>
                 <h4>${price}</h4>
                 <button sx={styles.checkout} onClick={addProduct}>
-                  Add To Cart
+                  { text }
                 </button>
               </div>
             </Col>
@@ -115,7 +120,6 @@ const styles = {
   checkout: {
     width: "150px",
     height: "45px",
-    backgroundColor: "accent",
     border: "none",
     color: "#fff",
     alignSelf: "flex-end",
