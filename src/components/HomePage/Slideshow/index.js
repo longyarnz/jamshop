@@ -7,25 +7,21 @@ import "slick-carousel/slick/slick-theme.css"
 import Card from "../Card"
 import Dummy from "../../../images/products/dumy.svg"
 
+const settings = {
+  infinite: true,
+  speed: 500,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  mobileFirst: true
+}
+
 function HomepageSlideshow() {
-  const settings = {
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    mobileFirst: true
-  }
+  const slides = useQuery()
 
   return (
     <section sx={styles.wrapper}>
       <Slider {...settings}>
-        <Card title="Great Dummy" src={Dummy} />
-        <Card title="Basic Dummy" src={Dummy} />
-        <Card title="Dummy X Pro" src={Dummy} />
-        <Card title="Wooden Dummy" src={Dummy} />
-        <Card title="Basic Dummy" src={Dummy} />
-        <Card title="Dummy X Pro" src={Dummy} />
-        <Card title="Wooden Dummy" src={Dummy} />
+        { slides }
       </Slider>
     </section>
   )
@@ -43,6 +39,7 @@ function useQuery() {
             id
             frontmatter {
               name
+              price
               excerpt
             }
           }
@@ -53,11 +50,11 @@ function useQuery() {
   )
 
   data = data.allMarkdownRemark.edges.map(({ node }) => {
-    const { name, excerpt, id } = node.frontmatter
+    const { name, excerpt, price } = node.frontmatter
     if (!name) return
     else {
       return (
-        <Card key={id} title={name} summary={excerpt} src={Dummy} />
+        <Card key={`${name}-${price}`} title={name} summary={excerpt} src={Dummy} />
       )
     }
   })
